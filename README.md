@@ -106,19 +106,19 @@ Example:
 ### **Home Page**: 
 
 ![Landing Page](Screenshots/image.png)
-**Landing Page**
+- **Landing Page**
 
 ![Menu](Screenshots/image-2.png)
-**Menu**
+- **Menu**
 
 ![Services](Screenshots/image-1.png)
-**Services**
+- **Services**
 
 ###  **User Profile [Sign Up and Login]**:
 ![Login Page](Screenshots/image-3.png)
-
+- **Login Page**
 ![Registration Page](Screenshots/image-4.png)
-
+- **Registartion Page**
 ###  **Room Details**: 
 ![Rooms](Screenshots/image-5.png)
 
