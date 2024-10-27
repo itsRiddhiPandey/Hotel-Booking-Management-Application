@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="room-details">
+    {% if room.photo %}
+        <img src="{{ room.photo.url }}" alt="Room Primary Photo"  >
+    {% endif %}
+        <p>Room Type: {{ room.room_type }}</p>
+        <p>Price: ₹{{ room.price }}</p>
+        <p>Description: {{ room.description }}</p>
+    <p>Amenities: {{ room.amenities }}</p>
+        <p>{% if room.is_available %}Available{% else %}Booked{% endif %}</p>
+        <h2>Additional Photos</h2>
+    {% for image in room.images.all %}
+        <img src="{{ image.image.url }}" alt="Room Photo" >
+    {% endfor %}
+        
+        <a href="{% url 'room_list' %}">Back to Room List</a>
+        <a href="{% url 'create_booking' %}" style="background: green">Book Now</a>
+    </div>
+{% endblock %}

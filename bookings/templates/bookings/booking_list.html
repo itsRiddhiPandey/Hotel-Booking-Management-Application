@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="bookings-container">
+        <h1 class="bookings-header">Your Bookings</h1>
+
+        <a href="{% url 'create_booking' %}" class="btn-new-booking">Make a New Booking</a>
+        <br>
+        {% if bookings %}
+        <ul class="booking-list">
+            {% for booking in bookings %}
+                <li class="booking-item">
+                    <p><strong>Guest:</strong> {{ booking.guest_name }} - <strong>Room:</strong> {{ booking.room.room_number }}</p>
+                    <p><strong>Check-in:</strong> {{ booking.check_in }} | <strong>Check-out:</strong> {{ booking.check_out }}</p>
+                    <p><strong>Total Price:</strong> ${{ booking.total_price }}</p>
+
+                    {% if booking.is_confirmed %}
+                        <p class="status-confirmed">Status: Confirmed</p>
+                    {% else %}
+                        <p class="status-pending">Status: Pending</p>
+                    {% endif %}
+
+                    {% if not booking.is_canceled %}
+                        <a href="{% url 'cancel_booking' booking.id %}" class="btn-cancel-booking">Cancel</a>
+                    {% else %}
+                        <span class="status-canceled">(Canceled)</span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <span >You don't have any prior bookings.</span>
+    {% endif %}
+
+
+        {% if messages %}
+            <ul class="message-list">
+                {% for message in messages %}
+                    <li class="message-item">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endblock %}

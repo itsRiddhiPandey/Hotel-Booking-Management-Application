@@ -1,0 +1,241 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D'Milano</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+        <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+        <link rel = "icon" href = "{% static 'images/logo.png' %}" type = "image/png">
+    </head>
+    <body>
+        
+        <!-- header -->
+        <header class = "header" id = "header">
+            <div class = "head-top">
+                <div class = "site-name">
+                    <span>Hotel D'Milano</span>
+                </div>
+                <div class = "site-nav">
+                    <span id = "nav-btn">MENU <i class = "fas fa-bars"></i></span>
+                </div>
+            </div>
+
+            <div class = "head-bottom flex">
+                <h2>WELCOME TO HOTEL D'MILANO</h2>
+                <p>Experience unparalleled luxury and comfort in our hotel, where every stay is crafted to offer you a perfect blend of elegance, relaxation, and exceptional service, ensuring unforgettable memories await you.</p>
+            </div>
+        </header>
+        <!-- end of header -->
+
+        <!-- side navbar -->
+        <div class = "sidenav" id = "sidenav">
+            <span class = "cancel-btn" id = "cancel-btn">
+                <i class = "fas fa-times"></i>
+            </span>
+
+            <ul class = "navbar">
+                <li><a href = "#header">home</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                {% endif %}
+                <li><a href="{% url 'room_list' %}">rooms</a></li>
+                <li><a href="{% url 'booking_list' %}">My Bookings</a></li>
+                <li><a href = "#services">services</a></li>
+                <li><a href = "#customers">customers</a></li>
+            </ul>
+            {% if user.is_authenticated %}
+                    <!-- Display Logout button if user is logged in -->
+                    <a href="{% url 'logout'  %}"><button type = "button" class = "btn sign-up" >Log Out</button></a>
+                {% else %}
+                    <!-- Display Login/Signup button if user is not logged in -->
+                    <a href="{% url 'register'  %}"><button type = "button" class = "btn sign-up" >Sign Up</button></a>
+                    <a href="{% url 'login'  %}"><button type = "button" class = "btn log-in" >Log In</button></a>
+                {% endif %}
+        </div>
+        <!-- end of side navbar -->
+
+        <!-- fullscreen modal -->
+        <div id = "modal"></div>
+        <!-- end of fullscreen modal -->
+        <!-- body content  -->
+        <section class = "services sec-width" id = "services">
+            <div class = "title">
+                <h4>services</h4>
+            </div>
+            <div class = "services-container">
+                <!-- single service -->
+                <article class = "service">
+                    <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-utensils"></i>
+                        </span>
+                    </div>
+                    <div class = "service-content">
+                        <h2>Food Service/ Food Runner</h2>
+                        <p>Our dedicated food service and food runner team ensures that every meal is delivered fresh and on time to your room or dining area. Whether you're enjoying a casual snack or a gourmet dinner, we prioritize timely service with attention to detail, guaranteeing an exceptional dining experience that meets all your culinary preferences.</p>
+                    </div>
+                </article>
+                <!-- end of single service -->
+                <!-- single service -->
+                <article class = "service">
+                    <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-swimming-pool"></i>
+                        </span>
+                    </div>
+                    <div class = "service-content">
+                        <h2>Refreshment</h2>
+                        <p>Relax and unwind with our extensive refreshment services. From poolside drinks to personalized beverages delivered right to your room, we offer a variety of refreshing options to help you recharge during your stay. Enjoy a selection of fresh juices, cocktails, and more, crafted to bring you ultimate relaxation and enjoyment.</p>
+                    </div>
+                </article>
+                <!-- end of single service -->
+                <!-- single service -->
+                <article class = "service">
+                    <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-broom"></i>
+                        </span>
+                    </div>
+                    <div class = "service-content">
+                        <h2>Housekeeping</h2>
+                        <p>Our housekeeping team is committed to maintaining the highest level of cleanliness and comfort during your stay. We provide daily cleaning services with attention to every detail, ensuring your room remains spotless and organized. Your comfort and satisfaction are our priority, with flexible housekeeping hours to suit your schedule.</p>
+                    </div>
+                </article>
+                <!-- end of single service -->
+                <!-- single service -->
+                <article class = "service">
+                    <div class = "service-icon">
+                        <span>
+                            <i class = "fas fa-door-closed"></i>
+                        </span>
+                    </div>
+                    <div class = "service-content">
+                        <h2>Room Security</h2>
+                        <p>Your safety and security are of utmost importance to us. Our room security service includes 24/7 surveillance, electronic key access, and personalized safety measures to ensure that you feel safe and protected throughout your stay. Rest easy knowing that we are dedicated to providing a secure environment for all our guests.</p>
+                    </div>
+                </article>
+                <!-- end of single service -->
+            </div>
+        </section>
+        
+        <section class = "customers" id = "customers">
+            <div class = "sec-width">
+                <div class = "title">
+                    <h1>customers</h1>
+                </div>
+                <div class = "customers-container">
+                    <!-- single customer -->
+                    <div class = "customer">
+                        <div class = "rating">
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "far fa-star"></i></span>
+                        </div>
+                        <h3>We Loved it</h3>
+                        <p>“The room was incredibly cozy, with a plush bed and modern amenities. I felt right at home. The peaceful atmosphere made it the perfect place to unwind after a long day of sightseeing. Will definitely be coming back!”</p>
+                        <img src = "{% static "images/Tanishka.jpg" %}" alt = "customer image">
+                        <span>Tanishka, Rishikesh</span>
+                    </div>
+                    <!-- end of single customer -->
+                    <!-- single customer -->
+                    <div class = "customer">
+                        <div class = "rating">
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "far fa-star"></i></span>
+                        </div>
+                        <h3>Comfortable Living</h3>
+                        <p>"The hotel is located right in the heart of the city, making it convenient to explore local attractions. The view from our room was stunning, and the nearby restaurants and shops were a bonus. Highly recommend!"
+
+</p>
+                        <img src = "{% static "images/kunal.jpg" %}" alt = "customer image">
+                        <span>Kunal, Rishikesh</span>
+                    </div>
+                    <!-- end of single customer -->
+                    <!-- single customer -->
+                    <div class = "customer">
+                        <div class = "rating">
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "fas fa-star"></i></span>
+                            <span><i class = "far fa-star"></i></span>
+                        </div>
+                        <h3>Nice Place</h3>
+                        <p>"From the moment we checked in, the staff at this hotel went above and beyond to make our stay comfortable. The rooms were clean and well-maintained, and every request was handled promptly. A truly wonderful experience!"</p>
+                        <img src = "{% static "images/Akshat.jpg" %}" alt = "customer image">
+                        <span>Akshat, Ujjain</span>
+                    </div>
+                    <!-- end of single customer -->
+                </div>
+            </div>
+        </section>
+        <!-- end of body content -->
+        
+        <!-- footer -->
+        <footer class = "footer">
+            <div class = "footer-container">
+                <div>
+                    <h2>About Us </h2>
+                    <p>Founded in 2024 by 5 college students working on a group project to create a web application.</p>
+                    <ul class = "social-icons">
+                        <li class = "flex">
+                            <i class = "fa fa-twitter fa-2x"></i>
+                        </li>
+                        <li class = "flex">
+                            <i class = "fa fa-facebook fa-2x"></i>
+                        </li>
+                        <li class = "flex">
+                            <i class = "fa fa-instagram fa-2x"></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2>Privacy</h2>
+                    <a href = "#">Career</a>
+                    <a href = "#">About Us</a>
+                    <a href = "#">Contact Us</a>
+                    <a href = "#">Services</a>
+                </div>
+
+                <div>
+                    <h2>Have A Question</h2>
+                    <div class = "contact-item">
+                        <span>
+                            <i class = "fas fa-map-marker-alt"></i>
+                        </span>
+                        <span>
+                            F-203, Subhash Nagar, Near Rajouri Garden, New Delhi - 110027, India.
+                        </span>
+                    </div>
+                    <div class = "contact-item">
+                        <span>
+                            <i class = "fas fa-phone-alt"></i>
+                        </span>
+                        <span>
+                            +84545 37534 48
+                        </span>
+                    </div>
+                    <div class = "contact-item">
+                        <span>
+                            <i class = "fas fa-envelope"></i>
+                        </span>
+                        <span>
+                            info@domain.com
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end of footer -->
+        
+        <script src = "{% static "script.js" %}"></script>
+    </body>
+</html>

@@ -1,0 +1,584 @@
+/* static/rooms/style.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+a {
+    text-decoration: none;  /* Removes the underline */
+    color: inherit;         /* Inherits the text color from its parent */
+}
+
+a:visited {
+    text-decoration: none;  /* Removes the underline for visited links */
+    color:inherit;         /* Keeps the original text color for visited links */
+}
+
+
+.room-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.room-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+}
+
+.room-card h2 {
+    color: #444;
+}
+
+.room-card p {
+    color: #666;
+}
+
+.room-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.room-card a:hover {
+    background-color: #0056b3;
+}
+/* Room Details Container */
+.room-details {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Room Image */
+.room-details img {
+    display: block;
+    margin: 20px auto;
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Room Details Text */
+.room-details p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+/* Room Availability */
+.room-details p:last-of-type {
+    font-weight: bold;
+    color: #28a745; /* Green color for available */
+}
+
+.booked {
+    color: #dc3545; /* Red color for booked */
+}
+/* Additional Photos Heading */
+.room-details h2 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    color: #555;
+    text-align: center;
+}
+
+/* Back to Room List Link */
+.room-details a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.room-details a:hover {
+    background-color: #0056b3;
+}
+/* Booking section background and container styling */
+.booking-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.65)), url("images/banner-img.jpg") center/cover no-repeat;
+    color: #fff;
+    padding: 40px 60px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Form styling */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Input and label styling */
+.booking-form label,
+.booking-form input {
+    width: 100%;
+}
+
+.booking-form label {
+    font-weight: 600;
+    word-spacing: 5px;
+    padding-bottom: 8px;
+}
+
+.booking-form input {
+    margin: 4px 0 16px 0;
+    padding: 12px 15px;
+    border-radius: 5px;
+    font-size: 17px;
+    border: none;
+}
+.booking-form select {
+    margin: 4px 0 16px 0;
+    padding: 12px 15px;
+    border-radius: 5px;
+    font-size: 17px;
+    border: none;
+}
+
+.booking-form input:focus {
+    outline: 0;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+}
+
+/* Submit button styling */
+.submit-btn {
+    margin-top: 18px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #000;
+}
+
+/* Error message styling */
+.form-errors ul {
+    list-style-type: none;
+    padding: 0;
+    color: red;
+}
+
+.form-errors li {
+    font-size: 15px;
+}
+
+.cancel-booking-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.65)), url("images/banner-img.jpg") center/cover no-repeat;
+    color: #fff;
+    padding: 40px 60px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+.cancel-booking-header {
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.cancel-booking-text {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cancel-booking-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-cancel, .btn-back {
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 17px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.btn-cancel {
+    background-color: var(--dark);
+    color: #fff;
+    border: 1px solid #fff;
+    transition: background-color 0.3s;
+}
+
+.btn-cancel:hover {
+    background-color: #ff4c4c;
+}
+
+.btn-back {
+    background-color: var(--dark);
+    color: #fff;
+    border: 1px solid var(--dark);
+    transition: background-color 0.3s;
+}
+
+.btn-back:hover {
+    background-color:green;
+}
+.bookings-container {
+    padding: 40px;
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.65)), url("images/banner-img.jpg") center/cover no-repeat;
+    /*background-color: #f9f9f9;*/
+    max-width: 900px;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.bookings-container span{
+    color: white;
+    font-size: 30px;
+}
+.bookings-header {
+    font-size: 36px;
+    font-weight: bold;
+    color:white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.btn-new-booking {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-new-booking:hover {
+    background-color: #45a049;
+}
+
+.booking-list {
+    list-style: none;
+    padding: 0;
+}
+
+.booking-item {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.booking-item p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.status-confirmed {
+    color: green;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: orange;
+    font-weight: bold;
+}
+
+.status-canceled {
+    color: red;
+    font-style: italic;
+}
+
+.btn-cancel-booking {
+    color: #ff4c4c;
+    text-decoration: none;
+    font-size: 16px;
+    border: 1px solid #ff4c4c;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-cancel-booking:hover {
+    background-color: #ff4c4c;
+    color: white;
+}
+
+.message-list {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.message-item {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+/* Container for the login form */
+.login-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.65)), url("images/banner-img.jpg") center/cover no-repeat;
+    color: #fff;
+    padding: 40px 60px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the title */
+.login-title {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styling the form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input fields */
+.login-form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+/* Button styles */
+.btn-submit {
+    background: var(--dark);
+    color: #fff;
+    padding: 12px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect for the submit button */
+.btn-submit:hover {
+    background: #333;
+}
+
+/* Focus effect for input fields */
+.login-form input:focus {
+    outline: none;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+}
+
+/* Container for the register form */
+.register-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.65)), url("images/banner-img.jpg") center/cover no-repeat;
+    color: #fff;
+    padding: 40px 60px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the title */
+.register-title {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styling the form */
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input fields */
+.register-form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+/* Button styles */
+.btn-submit {
+    background: var(--dark);
+    color: #fff;
+    padding: 12px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect for the submit button */
+.btn-submit:hover {
+    background: #333;
+}
+
+/* Focus effect for input fields */
+.register-form input:focus {
+    outline: none;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+}
+/* Container for the profile update form */
+.update-profile-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.85)), url("images/banner-img.jpg") center/cover no-repeat;
+    color: #fff;
+    padding: 40px 60px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the title */
+.update-profile-title {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styling the form */
+.update-profile-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input fields */
+.update-profile-form input,
+.update-profile-form select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+/* Button styles */
+.btn-save {
+    background: var(--dark);
+    color: #fff;
+    padding: 12px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect for the submit button */
+.btn-save:hover {
+    background: #333;
+}
+
+/* Focus effect for input fields */
+.update-profile-form input:focus,
+.update-profile-form select:focus {
+    outline: none;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+}
+
+/* Form group styling */
+.form-group label {
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+
+.form-group input {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+}
+/* Container for the profile page */
+.profile-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.85)), url("images/banner-img.jpg") center/cover no-repeat;
+    color: #fff;
+    padding: 40px 60px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.profile-data{
+    background-color: white;
+    color: black;
+    width: inherit;
+    padding: 10px;
+    border-radius: 10px;
+}
+/* Styling the profile title */
+.profile-title {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+}
+
+/* Profile picture styling */
+.profile-pic {
+    border-radius: 50%;
+    margin: 20px 0;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Button styles */
+.btn-save {
+    background: var(--dark);
+    color: #fff;
+    padding: 12px 20px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* Hover effect for the button */
+.btn-save:hover {
+    background: #333;
+}

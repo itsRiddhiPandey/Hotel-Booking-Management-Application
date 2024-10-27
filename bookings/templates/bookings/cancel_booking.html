@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="cancel-booking-container">
+        <h1 class="cancel-booking-header">Cancel Booking</h1>
+
+        <p class="cancel-booking-text">
+            Are you sure you want to cancel your booking for room {{ booking.room }} from {{ booking.check_in }} to {{ booking.check_out }}?
+        </p>
+
+        <form method="POST" class="cancel-booking-form">
+            {% csrf_token %}
+            <button type="submit" class="btn-cancel">Yes, Cancel Booking</button>
+            <a href="{% url 'booking_list' %}" class="btn-back">No, Go Back</a>
+        </form>
+    </div>
+{% endblock %}
+

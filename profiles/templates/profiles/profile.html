@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="profile-container">
+    <h2 class="profile-title">{{ user.username }}'s Profile</h2>
+
+    {% if profile.profile_pic %}
+        <img src="{{ profile.profile_pic.url }}" alt="Profile Picture" class="profile-pic">
+    {% else %}
+        <img src="{% static 'images/userImg.avif' %}" alt="Profile Picture" class="profile-pic">
+    {% endif %}
+
+<div class="profile-data">
+    <p><strong>First Name:</strong> {{ user.first_name }}</p>
+    <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Phone Number:</strong> {{ profile.phone_number }}</p>
+    <p><strong>Gender:</strong> {{ profile.get_gender_display }}</p>
+</div>
+
+
+    <a href="{% url 'update_profile' %}" class="btn-save">Edit Profile</a>
+</div>
+{% endblock %}
