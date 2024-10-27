@@ -83,52 +83,60 @@ DjangoProject/
    - Manage bookings, rooms, and profiles from this interface.
 
 2. **Booking and Room Management**:
-   - Use the app to create and manage bookings, check room availability, and update booking details.
+   - Use the app to create bookings, check room availability, and update booking details.
 
 3. **Customer Profiles**:
-   - Customers can create and edit their profiles on `/profile/` and `/profile/edit/`.
+   - Customers can register and login to their profiles on `/booking/register/` and `/booking/login/`.
 
 ## API Endpoints
 
-| Endpoint                  | HTTP Method | Description                        |
-|---------------------------|-------------|------------------------------------|
+| Endpoint                  | HTTP Method | Description                               |
+|---------------------------|-------------|-------------------------------------------|
 | `/bookings/`              | GET, POST   | List all bookings or create a new booking |
-| `/rooms/`                 | GET         | List all rooms                    |
-| `/rooms/<int:id>/`        | GET, PUT    | Retrieve or update room details   |
-| `/profile/`               | GET, PUT    | Retrieve or update customer profile |
+| `/rooms/`                 | GET         | List all rooms                            |
+| `/rooms/<int:id>/`        | GET, PUT    | Retrieve or update room details           |
+| `/booking/register/`      | GET, PUT    | Register Page for new users               |
 
 > **Note**: Update the endpoints based on your project’s specific routing.
 
 ## Screenshots
 
-Add screenshots of your application in this section to give users a quick preview of the functionality and UI. Place images in a `screenshots/` folder in your project directory and reference them as shown below.
-
 Example:
 
-- **Home Page**: 
+### **Home Page**: 
+
 ![Landing Page](Screenshots/image.png)
+**Landing Page**
 
 ![Menu](Screenshots/image-2.png)
+**Menu**
 
 ![Services](Screenshots/image-1.png)
+**Services**
 
-
-- **User Profile [Sign Up and Login]**:
+###  **User Profile [Sign Up and Login]**:
 ![Login Page](Screenshots/image-3.png)
 
 ![Registration Page](Screenshots/image-4.png)
 
-- **Room Details**: 
+###  **Room Details**: 
 ![Rooms](Screenshots/image-5.png)
 
-- **Booking Page**:
+###  **Booking Page**:
 ![](Screenshots/image-6.png)
 
-- **Admin Panel:** Screenshot of the admin dashboard for managing bookings and rooms.
+###  **Admin Panel:** Screenshot of the admin dashboard for managing bookings and rooms.
 ![Admin Landing Page](Screenshots/image-7.png)
+- **Admin Landing Page**
+
 ![User Management](Screenshots/image-10.png)
+- **User Management**
+
 ![Booking Management](Screenshots/image-8.png)
+- **Booking Management**
+
 ![Room Management](Screenshots/image-9.png)
+- **Room Management**
 
 ## License
 This project is licensed under the MIT License.
